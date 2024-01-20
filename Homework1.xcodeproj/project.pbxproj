@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		756FBD9E2B5B6EAA00C385AA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 756FBD9D2B5B6EAA00C385AA /* README.md */; };
+		756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */; };
+		756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */; };
 		757A3D8F2B565C4A00BF8D61 /* Homework1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */; };
 		757A3D912B565C4A00BF8D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D902B565C4A00BF8D61 /* ContentView.swift */; };
 		757A3D932B565C4B00BF8D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A3D922B565C4B00BF8D61 /* Assets.xcassets */; };
@@ -14,6 +17,10 @@
 		757A3DA02B565C4B00BF8D61 /* Homework1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D9F2B565C4B00BF8D61 /* Homework1Tests.swift */; };
 		757A3DAA2B565C4B00BF8D61 /* Homework1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */; };
 		757A3DAC2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */; };
+		757A3DBA2B565D3100BF8D61 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DB92B565D3100BF8D61 /* PhoneNumberKit */; };
+		757A3DBC2B565D3100BF8D61 /* PhoneNumberKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */; };
+		757A3DBE2B565D3100BF8D61 /* PhoneNumberKit-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */; };
+		758AB8262B588981000C968A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758AB8252B588981000C968A /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		756FBD9D2B5B6EAA00C385AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldWrapper.swift; sourceTree = "<group>"; };
 		757A3D8B2B565C4A00BF8D61 /* Homework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1App.swift; sourceTree = "<group>"; };
 		757A3D902B565C4A00BF8D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +54,7 @@
 		757A3DA52B565C4B00BF8D61 /* Homework1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITests.swift; sourceTree = "<group>"; };
 		757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		758AB8252B588981000C968A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757A3DBA2B565D3100BF8D61 /* PhoneNumberKit in Frameworks */,
+				757A3DBC2B565D3100BF8D61 /* PhoneNumberKit-Dynamic in Frameworks */,
+				757A3DBE2B565D3100BF8D61 /* PhoneNumberKit-Static in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */,
+				756FBD9D2B5B6EAA00C385AA /* README.md */,
 				757A3D902B565C4A00BF8D61 /* ContentView.swift */,
+				756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */,
+				756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */,
+				758AB8252B588981000C968A /* Launch Screen.storyboard */,
 				757A3D922B565C4B00BF8D61 /* Assets.xcassets */,
 				757A3D942B565C4B00BF8D61 /* Preview Content */,
 			);
@@ -143,6 +161,11 @@
 			dependencies = (
 			);
 			name = Homework1;
+			packageProductDependencies = (
+				757A3DB92B565D3100BF8D61 /* PhoneNumberKit */,
+				757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */,
+				757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */,
+			);
 			productName = Homework1;
 			productReference = 757A3D8B2B565C4A00BF8D61 /* Homework1.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +238,9 @@
 				Base,
 			);
 			mainGroup = 757A3D822B565C4A00BF8D61;
+			packageReferences = (
+				757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+			);
 			productRefGroup = 757A3D8C2B565C4A00BF8D61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,7 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758AB8262B588981000C968A /* Launch Screen.storyboard in Resources */,
 				757A3D962B565C4B00BF8D61 /* Preview Assets.xcassets in Resources */,
+				756FBD9E2B5B6EAA00C385AA /* README.md in Resources */,
 				757A3D932B565C4B00BF8D61 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +287,8 @@
 			files = (
 				757A3D912B565C4A00BF8D61 /* ContentView.swift in Sources */,
 				757A3D8F2B565C4A00BF8D61 /* Homework1App.swift in Sources */,
+				756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */,
+				756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +457,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +486,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -582,6 +614,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		757A3DB92B565D3100BF8D61 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+		757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = "PhoneNumberKit-Dynamic";
+		};
+		757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = "PhoneNumberKit-Static";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 757A3D832B565C4A00BF8D61 /* Project object */;
 }
