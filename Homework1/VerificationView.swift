@@ -140,7 +140,7 @@ struct VerificationView: View {
                     if success {
                         isVerificationSuccessful = true
                         errorMessage = nil
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // one second delay before going to home screen
                             showHomeView = true
                         }
                     } else {
