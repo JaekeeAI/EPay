@@ -13,49 +13,54 @@ struct LoginView: View {
     @FocusState private var isInputFocused: Bool
 
     var body: some View {
-        ZStack {
+        NavigationStack {
             ZStack {
                 VStack {
-                    logoAndTitle // Display Logo and Title
-                    Spacer().frame(maxHeight: 30)
-                    phoneNumberInput // Phone number textfield and flag
-                    Spacer().frame(maxHeight: 500)
+                    VStack {
+                        Spacer().frame(maxHeight: 90)
+                        titleText
+                        phoneNumberInput // Phone number textfield and flag
+                        Spacer().frame(maxHeight: 500)
+                    }
+                    .padding()
+                    .frame(maxHeight: .infinity)
+                    .background(Color.black)
+                    .contentShape(Rectangle())
+                    .onTapGesture { isInputFocused = false }
+                    .onAppear { isInputFocused = true }
+                    .edgesIgnoringSafeArea(.all)
                 }
-                .padding()
+                .ignoresSafeArea(.keyboard) // Prevent keyboard from pushing the View up
+                .barTitle(title: "EPay", logoImage: "epaylogo") 
+                
+                //==============================
+                // Send verification text button
+                ZStack {
+                    BottomButton(
+                        label: "Send Verification Text",
+                        action: {
+                            isInputFocused = false
+                            viewModel.GoToVerificationView = true
+                            Task { await viewModel.sendVerificationToken() }
+                        },
+                        isEnabled: viewModel.isPhoneNumberValid // if # valid enable button
+                    )
+                }
                 .frame(maxHeight: .infinity)
-                .background(Color.black)
-                .contentShape(Rectangle())
-                .onTapGesture { isInputFocused = false }
-                .onAppear { isInputFocused = true }
-                .edgesIgnoringSafeArea(.all)
+                // Redirect to VerificationView
+                .navigationDestination(isPresented: $viewModel.GoToVerificationView) {
+                    VerificationView(phoneNumber: viewModel.phoneNumber, viewModel: viewModel)
+                }
+                //==============================
             }
-            .ignoresSafeArea(.keyboard) // Prevent keyboard from pushing the View up
-            
-            ZStack {
-                submitButton // Send verification text button
-            }
-            .frame(maxHeight: .infinity)
         }
     }
-
-    private var logoAndTitle: some View {
-        VStack {
-            HStack {
-                Image("epaylogo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 30, height: 30)
-                Text("EPay")
-                    .bold()
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-            }
-            Spacer().frame(maxHeight: 30)
-            Text("What's your phone number?")
-                .bold()
-                .foregroundColor(.white)
-                .font(.system(size: 21))
-        }
+    
+    private var titleText: some View {
+        Text("What's your phone number?")
+            .font(.title2)
+            .bold()
+            .foregroundColor(.white)
     }
 
     private var phoneNumberInput: some View {
@@ -67,33 +72,16 @@ struct LoginView: View {
                 .frame(width:350, height: 30)
                 .padding()
                 .focused($isInputFocused) // focus on the textfield is isInputFocused true
-                .keyboardType(.numberPad) // Set the type of keyboard to display
+                .keyboardType(.numberPad) // Set the type of keyboard to display (numpad bc +1)
+                .frame(minHeight: 90)
 
             // If # is valid then font is green else it red
             Label(viewModel.errorMessage, systemImage: "")
-                        .foregroundColor(viewModel.isPhoneNumberValid ? .green : .red)
-        }
-    }
-
-    private var submitButton: some View {
-        GeometryReader { geometry in // Grab the size of the parent view
-            Button {
-                isInputFocused = false
-            } label: {
-                Text("Send Verification Text")
-                    .fontWeight(.semibold)
-                    .frame(width: 360, height: 50)
-                    .foregroundColor(.black)
-                    // Make the button lightup if # valid to signal button is clickable
-                    .background(viewModel.isPhoneNumberValid ? Color.white : Color(.lightGray))
-                    .cornerRadius(12) // Trim the corner of Button
-            }
-            .disabled(!viewModel.isPhoneNumberValid) // Disable the button if # is invalid
-            .position(x: geometry.size.width / 2, y: geometry.size.height - 50) // Position at the bottom
+                .foregroundColor(viewModel.isPhoneNumberValid ? .green : .red)
+                .font(.subheadline)
         }
     }
 }
-
 
 #Preview {
     LoginView()

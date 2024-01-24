@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752004EA2B5CDB7000A68B9A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752004E92B5CDB6F00A68B9A /* Api.swift */; };
+		752004EC2B5CF5DB00A68B9A /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752004EB2B5CF5DB00A68B9A /* VerificationView.swift */; };
 		756FBD9E2B5B6EAA00C385AA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 756FBD9D2B5B6EAA00C385AA /* README.md */; };
 		756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */; };
 		756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */; };
@@ -20,6 +22,10 @@
 		757A3DBA2B565D3100BF8D61 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DB92B565D3100BF8D61 /* PhoneNumberKit */; };
 		757A3DBC2B565D3100BF8D61 /* PhoneNumberKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */; };
 		757A3DBE2B565D3100BF8D61 /* PhoneNumberKit-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */; };
+		7586BD5A2B5F8C1E0041B9A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD592B5F8C1E0041B9A5 /* HomeView.swift */; };
+		7586BD5C2B5FABA40041B9A5 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */; };
+		7586BD602B5FB2A00041B9A5 /* BarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */; };
+		7586BD642B607CB10041B9A5 /* CircularLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD632B607CB10041B9A5 /* CircularLoading.swift */; };
 		758AB8262B588981000C968A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758AB8252B588981000C968A /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752004E92B5CDB6F00A68B9A /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		752004EB2B5CF5DB00A68B9A /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		756FBD9D2B5B6EAA00C385AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldWrapper.swift; sourceTree = "<group>"; };
@@ -54,6 +62,10 @@
 		757A3DA52B565C4B00BF8D61 /* Homework1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITests.swift; sourceTree = "<group>"; };
 		757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7586BD592B5F8C1E0041B9A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
+		7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTitle.swift; sourceTree = "<group>"; };
+		7586BD632B607CB10041B9A5 /* CircularLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoading.swift; sourceTree = "<group>"; };
 		758AB8252B588981000C968A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,11 +121,17 @@
 			isa = PBXGroup;
 			children = (
 				757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */,
-				756FBD9D2B5B6EAA00C385AA /* README.md */,
 				757A3D902B565C4A00BF8D61 /* ContentView.swift */,
-				756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */,
+				752004EB2B5CF5DB00A68B9A /* VerificationView.swift */,
+				7586BD592B5F8C1E0041B9A5 /* HomeView.swift */,
+				7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */,
+				7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */,
+				7586BD632B607CB10041B9A5 /* CircularLoading.swift */,
 				756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */,
+				756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */,
+				752004E92B5CDB6F00A68B9A /* Api.swift */,
 				758AB8252B588981000C968A /* Launch Screen.storyboard */,
+				756FBD9D2B5B6EAA00C385AA /* README.md */,
 				757A3D922B565C4B00BF8D61 /* Assets.xcassets */,
 				757A3D942B565C4B00BF8D61 /* Preview Content */,
 			);
@@ -286,8 +304,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				757A3D912B565C4A00BF8D61 /* ContentView.swift in Sources */,
+				7586BD642B607CB10041B9A5 /* CircularLoading.swift in Sources */,
+				7586BD5A2B5F8C1E0041B9A5 /* HomeView.swift in Sources */,
+				7586BD602B5FB2A00041B9A5 /* BarTitle.swift in Sources */,
 				757A3D8F2B565C4A00BF8D61 /* Homework1App.swift in Sources */,
 				756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */,
+				752004EC2B5CF5DB00A68B9A /* VerificationView.swift in Sources */,
+				752004EA2B5CDB7000A68B9A /* Api.swift in Sources */,
+				7586BD5C2B5FABA40041B9A5 /* BottomButton.swift in Sources */,
 				756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

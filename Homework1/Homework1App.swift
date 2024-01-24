@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct Homework1App: App {
+    init() {
+        Api.shared.appId = "QSQEo5xSmENL" // Set the appId for API
+    }
+
     var body: some Scene {
         WindowGroup {
             LoginView()
