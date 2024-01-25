@@ -28,3 +28,7 @@ Implements a Coordinator class for handling text field events and communicating 
 onChange
 I use this to listen to changes and update whatever is in the parameter
 
+allSatisfy and $0
+I use this to check if all textfield is filled. allSatisfy is check if all element meet a certain conditions. $0 is used to check each textfield similar to loop. 
+
+DispatchQueue.main.async

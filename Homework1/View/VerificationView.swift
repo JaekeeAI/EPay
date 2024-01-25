@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct NoTouch: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .allowsHitTesting(false) // Disables touch interactions
-    }
-}
-
 struct VerificationView: View {
     @State private var otpFields: [String] = Array(repeating: "", count: 6)
     @State private var isVerifying = false // use to check if it
@@ -34,7 +27,6 @@ struct VerificationView: View {
                 Spacer()
                 resendButton
             }
-            .frame(maxWidth: .infinity)
             .background(Color.black)
             .navigationDestination(isPresented: $showHomeView) { HomeView() }
             .barTitle(title: "EPay", logoImage: "epaylogo")
@@ -56,12 +48,12 @@ struct VerificationView: View {
                     .multilineTextAlignment(.center)
                     .keyboardType(.phonePad) // make sure users enter number only
                     .background(Color.gray.opacity(0.2))
-                    .foregroundColor(.white)
+                    .foregroundColor(getTextFieldColor(for: index))
                     .cornerRadius(5)
                     .focused($focusedField, equals: index)
                     .onChange(of: otpFields[index]) { handleOTPChange(at: index) }
                     .onAppear { if index == 0 && focusedField == nil { focusedField = 0 } }
-                    .modifier(NoTouch()) // Disable interaction with textfield
+                    .allowsHitTesting(false) // Disable interaction with textfield
                     .accentColor(.clear) // make text cursor clear
                     .overlay( // change border color when not empty
                         RoundedRectangle(cornerRadius: 5)
@@ -108,47 +100,74 @@ struct VerificationView: View {
             isEnabled: !isVerifying, // if not verifying the OTP then enable button
             isLoading: isLoading  // if it loading then button is disable
         )
-        .frame(maxHeight: .infinity)
     }
 
     private func handleOTPChange(at index: Int) {
         let value = otpFields[index]
-        
-        errorMessage = nil // Reset the error message when the user starts editing
-        
-        if value.count == 2 { // if there more than 2 value in same textfield
-            let digits = Array(value)
-            otpFields[index] = String(digits[0]) // Keep the leftmost digit in the current field
+        errorMessage = nil // Clear error message when editing begins
 
-            if index < otpFields.count - 1 {
-                otpFields[index + 1] = String(digits[1]) // Move the rightmost digit to the next field
-                focusedField = index + 1
-            }
-        } else if value.isEmpty && index > 0 { // check if textfield is empty and it not first cell
-            focusedField = index - 1
+        switch value.count {
+        case 6:
+            handleOTPAutofill(value)
+        case 2:
+            handleOTPInput(at: index)
+        default:
+            handleBackSpace(at: index)
         }
         
-        // check if users finish typing the OTP code and verify if it correct
-        if otpFields.allSatisfy({ $0.count == 1 }) && !isVerifying {
-            let code = otpFields.joined() // combine all the textfield
-            isVerifying = true
-            isLoading = true
-            viewModel.verifyCode(phoneNumber: phoneNumber, code: code) { success, errorString in
-                DispatchQueue.main.async {
-                    isLoading = false
-                    isVerifying = false
-                    if success {
-                        isVerificationSuccessful = true
-                        errorMessage = nil
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // one second delay before going to home screen
-                            showHomeView = true
-                        }
-                    } else {
-                        errorMessage = errorString
-                        isVerificationSuccessful = false
-                    }
-                }
+        verifyCodeIfComplete()
+    }
+
+    private func handleOTPAutofill(_ value: String) {
+        let digits = Array(value)
+        for (i, digit) in digits.enumerated() where i < otpFields.count {
+            otpFields[i] = String(digit)
+        }
+        focusedField = otpFields.count - 1 // Focus on the last field
+    }
+
+    private func handleOTPInput(at index: Int) {
+        let digits = Array(otpFields[index])
+        otpFields[index] = String(digits[0])
+        
+        if index < otpFields.count - 1 {
+            otpFields[index + 1] = String(digits[1])
+            focusedField = index + 1
+        }
+    }
+
+    private func handleBackSpace(at index: Int) {
+        if otpFields[index].isEmpty && index > 0 {
+            focusedField = index - 1
+        }
+    }
+
+    private func verifyCodeIfComplete() {
+        let isOTPComplete = otpFields.allSatisfy { $0.count == 1 }
+        guard isOTPComplete && !isVerifying else { return }
+
+        let code = otpFields.joined()
+        isVerifying = true
+        isLoading = true
+        viewModel.verifyCode(phoneNumber: phoneNumber, code: code) { success, errorString in
+            DispatchQueue.main.async {
+                isLoading = false
+                isVerifying = false
+                handleVerificationResult(success: success, errorString: errorString)
             }
+        }
+    }
+
+    private func handleVerificationResult(success: Bool, errorString: String?) {
+        if success {
+            isVerificationSuccessful = true
+            errorMessage = nil
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                showHomeView = true
+            }
+        } else {
+            errorMessage = errorString
+            isVerificationSuccessful = false
         }
     }
     
@@ -170,6 +189,16 @@ struct VerificationView: View {
             return Color.red // Red border for incorrect code
         } else { // Default border color is black but if not empty then gray
             return otpFields[index].isEmpty ? Color.black : Color.gray
+        }
+    }
+    
+    private func getTextFieldColor(for index: Int) -> Color { // for mean function return a color
+        if isVerificationSuccessful {
+            return Color.green // Green text when verification is successful
+        } else if let errorMessage = errorMessage, !errorMessage.isEmpty {
+            return Color.red // Red text for error or failed verification
+        } else {
+            return Color.white // Default color
         }
     }
 }

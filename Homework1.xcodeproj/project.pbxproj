@@ -19,14 +19,12 @@
 		757A3DA02B565C4B00BF8D61 /* Homework1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D9F2B565C4B00BF8D61 /* Homework1Tests.swift */; };
 		757A3DAA2B565C4B00BF8D61 /* Homework1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */; };
 		757A3DAC2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */; };
-		757A3DBA2B565D3100BF8D61 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DB92B565D3100BF8D61 /* PhoneNumberKit */; };
-		757A3DBC2B565D3100BF8D61 /* PhoneNumberKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */; };
-		757A3DBE2B565D3100BF8D61 /* PhoneNumberKit-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */; };
 		7586BD5A2B5F8C1E0041B9A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD592B5F8C1E0041B9A5 /* HomeView.swift */; };
 		7586BD5C2B5FABA40041B9A5 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */; };
 		7586BD602B5FB2A00041B9A5 /* BarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */; };
 		7586BD642B607CB10041B9A5 /* CircularLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD632B607CB10041B9A5 /* CircularLoading.swift */; };
 		758AB8262B588981000C968A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758AB8252B588981000C968A /* Launch Screen.storyboard */; };
+		758C1DEE2B62504C004CE379 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 758C1DED2B62504C004CE379 /* PhoneNumberKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +43,19 @@
 			remoteInfo = Homework1;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		758C1DEB2B624FB0004CE379 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		752004E92B5CDB6F00A68B9A /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -74,9 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757A3DBA2B565D3100BF8D61 /* PhoneNumberKit in Frameworks */,
-				757A3DBC2B565D3100BF8D61 /* PhoneNumberKit-Dynamic in Frameworks */,
-				757A3DBE2B565D3100BF8D61 /* PhoneNumberKit-Static in Frameworks */,
+				758C1DEE2B62504C004CE379 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,18 +129,13 @@
 		757A3D8D2B565C4A00BF8D61 /* Homework1 */ = {
 			isa = PBXGroup;
 			children = (
+				756FBD9D2B5B6EAA00C385AA /* README.md */,
 				757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */,
-				757A3D902B565C4A00BF8D61 /* ContentView.swift */,
-				752004EB2B5CF5DB00A68B9A /* VerificationView.swift */,
-				7586BD592B5F8C1E0041B9A5 /* HomeView.swift */,
-				7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */,
-				7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */,
-				7586BD632B607CB10041B9A5 /* CircularLoading.swift */,
-				756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */,
-				756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */,
 				752004E92B5CDB6F00A68B9A /* Api.swift */,
 				758AB8252B588981000C968A /* Launch Screen.storyboard */,
-				756FBD9D2B5B6EAA00C385AA /* README.md */,
+				757BD4D52B63134B00A0D46B /* Model */,
+				757BD4D42B63134100A0D46B /* View */,
+				757BD4D62B63137100A0D46B /* ViewModel */,
 				757A3D922B565C4B00BF8D61 /* Assets.xcassets */,
 				757A3D942B565C4B00BF8D61 /* Preview Content */,
 			);
@@ -163,6 +167,35 @@
 			path = Homework1UITests;
 			sourceTree = "<group>";
 		};
+		757BD4D42B63134100A0D46B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				757A3D902B565C4A00BF8D61 /* ContentView.swift */,
+				752004EB2B5CF5DB00A68B9A /* VerificationView.swift */,
+				7586BD592B5F8C1E0041B9A5 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		757BD4D52B63134B00A0D46B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */,
+				756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		757BD4D62B63137100A0D46B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */,
+				7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */,
+				7586BD632B607CB10041B9A5 /* CircularLoading.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +206,7 @@
 				757A3D872B565C4A00BF8D61 /* Sources */,
 				757A3D882B565C4A00BF8D61 /* Frameworks */,
 				757A3D892B565C4A00BF8D61 /* Resources */,
+				758C1DEB2B624FB0004CE379 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,9 +214,7 @@
 			);
 			name = Homework1;
 			packageProductDependencies = (
-				757A3DB92B565D3100BF8D61 /* PhoneNumberKit */,
-				757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */,
-				757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */,
+				758C1DED2B62504C004CE379 /* PhoneNumberKit */,
 			);
 			productName = Homework1;
 			productReference = 757A3D8B2B565C4A00BF8D61 /* Homework1.app */;
@@ -257,7 +289,7 @@
 			);
 			mainGroup = 757A3D822B565C4A00BF8D61;
 			packageReferences = (
-				757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				758C1DEC2B62504C004CE379 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 			);
 			productRefGroup = 757A3D8C2B565C4A00BF8D61 /* Products */;
 			projectDirPath = "";
@@ -476,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Homework1/Preview Content\"";
+				DEVELOPMENT_TEAM = BU4NVKNK4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -505,6 +538,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Homework1/Preview Content\"";
+				DEVELOPMENT_TEAM = BU4NVKNK4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -640,7 +674,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+		758C1DEC2B62504C004CE379 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
 			requirement = {
@@ -651,20 +685,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		757A3DB92B565D3100BF8D61 /* PhoneNumberKit */ = {
+		758C1DED2B62504C004CE379 /* PhoneNumberKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			package = 758C1DEC2B62504C004CE379 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
 			productName = PhoneNumberKit;
-		};
-		757A3DBB2B565D3100BF8D61 /* PhoneNumberKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
-			productName = "PhoneNumberKit-Dynamic";
-		};
-		757A3DBD2B565D3100BF8D61 /* PhoneNumberKit-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 757A3DB82B565D3100BF8D61 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
-			productName = "PhoneNumberKit-Static";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

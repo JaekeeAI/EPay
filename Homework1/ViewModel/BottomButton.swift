@@ -14,7 +14,7 @@ struct BottomButton: View {
     var isLoading: Bool = false
 
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { geometry in // grab the screen size
             Button(action: action) {
                 if isLoading {
                     CircularLoading() // Use your loading view
@@ -29,6 +29,7 @@ struct BottomButton: View {
             .foregroundColor(isLoading ? .clear : .black)
             .background(isEnabled ? Color.white : Color(.lightGray))
             .cornerRadius(12)
+            // adjust the position of button to be at bottom of the screen
             .position(x: geometry.size.width / 2, y: geometry.size.height - 50)
         }
     }

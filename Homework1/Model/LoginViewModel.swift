@@ -34,8 +34,7 @@ class LoginViewModel: ObservableObject {
     // Method to send verification token
     func sendVerificationToken() async {
         do {
-            let e164PhoneNumber = phoneNumber
-            let _ = try await Api.shared.sendVerificationToken(e164PhoneNumber: e164PhoneNumber)
+            let _ = try await Api.shared.sendVerificationToken(e164PhoneNumber: phoneNumber)
 
             DispatchQueue.main.async {
                 self.GoToVerificationView = true

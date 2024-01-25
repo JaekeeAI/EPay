@@ -17,7 +17,7 @@ struct CircularLoading: View {
             .frame(width: 21, height: 21)
             .rotationEffect(Angle(degrees: isSpinning ? 360 : 0))
             .onAppear {
-                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+                withAnimation(Animation.linear(duration: 0.5).repeatForever(autoreverses: false)) {
                     isSpinning = true
                 }
             }
