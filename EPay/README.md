@@ -44,3 +44,5 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {}
 I used this code to delay 1 second before transitioned to home view. Here a link where I learn the code
 https://www.hackingwithswift.com/example-code/system/how-to-run-code-after-a-delay-using-asyncafter-and-perform
 
+Timer.scheduledTimer
+I got rate limited for sending too many multiple OTP request so I set up a cooldown using a Timer 

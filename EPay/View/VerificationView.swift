@@ -9,7 +9,6 @@ import SwiftUI
 
 struct VerificationView: View {
     @State private var otpFields: [String] = Array(repeating: "", count: 6)
-    @State private var isVerifying = false // use to check if it
     @State private var showHomeView = false
     @FocusState private var focusedField: Int?
     var phoneNumber: String
@@ -17,6 +16,8 @@ struct VerificationView: View {
     @State private var errorMessage: String? = nil
     @State private var isVerificationSuccessful: Bool = false // Use for border
     @State private var isLoading = false  // Use for CircularLoading animation
+    
+    @State private var cooldownTime: Int = 0
 
     var body: some View {
         NavigationStack {
@@ -30,6 +31,13 @@ struct VerificationView: View {
             .background(Color.black)
             .navigationDestination(isPresented: $showHomeView) { HomeView() }
             .barTitle(title: "EPay", logoImage: "epaylogo")
+            .onAppear{
+                isLoading = true // start loading
+                Task {
+                    await viewModel.sendVerificationToken()
+                    isLoading = false  // Stop loading
+                }
+            }
         }
     }
 
@@ -51,14 +59,10 @@ struct VerificationView: View {
                     .foregroundColor(getTextFieldColor(for: index))
                     .cornerRadius(5)
                     .focused($focusedField, equals: index)
+                    // when users make change to textfield run handleOTPChange
                     .onChange(of: otpFields[index]) { handleOTPChange(at: index) }
-                    .onAppear { if index == 0 && focusedField == nil { focusedField = 0 }
-                        isLoading = true // start loading
-                        Task {
-                            await viewModel.sendVerificationToken()
-                            isLoading = false  // Stop loading
-                        }
-                    }
+                    // focus on first textfield at start
+                    .onAppear { if index == 0 && focusedField == nil { focusedField = 0 } }
                     .allowsHitTesting(false) // Disable interaction with textfield
                     .accentColor(.clear) // make text cursor clear
                     .overlay( // change border color when not empty
@@ -93,8 +97,9 @@ struct VerificationView: View {
 
     private var resendButton: some View {
         BottomButton(
-            label: "Resend Code",
+            label: cooldownTime > 0 ? "Resend in \(cooldownTime)s" : "Resend Code",
             action: {
+                startCooldown()
                 resetOTPFields()
                 isLoading = true  // Start loading
                 Task {
@@ -103,9 +108,22 @@ struct VerificationView: View {
                 }
                 focusFirstTextField() // after reset set focus on 1st textfield
             },
-            isEnabled: !isVerifying, // if not verifying the OTP then enable button
+            isEnabled: cooldownTime == 0, // CD = 0 true then enable else disable it
             isLoading: isLoading  // if it loading then button is disable
         )
+    }
+    
+    private func startCooldown() {
+        cooldownTime = 30 // Start from 30 seconds
+        
+        // start the timer
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if cooldownTime > 0 {
+                cooldownTime -= 1
+            } else {
+                timer.invalidate() // stop the timer
+            }
+        }
     }
 
     private func handleOTPChange(at index: Int) {
@@ -113,19 +131,21 @@ struct VerificationView: View {
         errorMessage = nil // Clear error message when editing begins
 
         switch value.count {
-        case 6:
+        case 6: // if there 6 digits in a textfield
             handleOTPAutofill(value)
-        case 2:
+        case 2: // if there 2 digits in a textfield
             handleOTPInput(at: index)
         default:
             handleBackSpace(at: index)
         }
         
+        // check if every textfield is filled
         verifyCodeIfComplete()
     }
 
     private func handleOTPAutofill(_ value: String) {
-        let digits = Array(value)
+        let digits = Array(value) // split each code into an array
+        // put each digit in array into each individual OTP fields
         for (i, digit) in digits.enumerated() where i < otpFields.count {
             otpFields[i] = String(digit)
         }
@@ -133,9 +153,13 @@ struct VerificationView: View {
     }
 
     private func handleOTPInput(at index: Int) {
+        // break the input into individual character and store it in an array
         let digits = Array(otpFields[index])
+        
+        // put the rightmost digit in current textfield
         otpFields[index] = String(digits[0])
         
+        // put the leftmost digit in the next textfield
         if index < otpFields.count - 1 {
             otpFields[index + 1] = String(digits[1])
             focusedField = index + 1
@@ -143,22 +167,33 @@ struct VerificationView: View {
     }
 
     private func handleBackSpace(at index: Int) {
+        // move focus back to previous textfield 
         if otpFields[index].isEmpty && index > 0 {
             focusedField = index - 1
         }
     }
+    
+    private func resetOTPFields() { //Reset all fields to empty
+        otpFields = Array(repeating: "", count: 6) // create array with 6 slots all empty
+    }
+    
+    private func focusFirstTextField() { // delay by 0.1 second before reset focus to 1st textfield
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.focusedField = 0
+        }
+    }
 
     private func verifyCodeIfComplete() {
+        // check if all textfield is filled
         let isOTPComplete = otpFields.allSatisfy { $0.count == 1 }
-        guard isOTPComplete && !isVerifying else { return }
+        // if all textfield is not filled then exit this function
+        guard isOTPComplete else { return }
 
         let code = otpFields.joined()
-        isVerifying = true
         isLoading = true
         viewModel.verifyCode(phoneNumber: phoneNumber, code: code) { success, errorString in
             DispatchQueue.main.async {
                 isLoading = false
-                isVerifying = false
                 handleVerificationResult(success: success, errorString: errorString)
             }
         }
@@ -168,22 +203,12 @@ struct VerificationView: View {
         if success {
             isVerificationSuccessful = true
             errorMessage = nil
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // delays 1 second
                 showHomeView = true
             }
         } else {
             errorMessage = errorString
             isVerificationSuccessful = false
-        }
-    }
-    
-    private func resetOTPFields() { //Reset all fields to empty
-        otpFields = Array(repeating: "", count: 6) // create array with 6 slots all empty
-    }
-    
-    private func focusFirstTextField() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.focusedField = 0
         }
     }
     
