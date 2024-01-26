@@ -52,7 +52,13 @@ struct VerificationView: View {
                     .cornerRadius(5)
                     .focused($focusedField, equals: index)
                     .onChange(of: otpFields[index]) { handleOTPChange(at: index) }
-                    .onAppear { if index == 0 && focusedField == nil { focusedField = 0 } }
+                    .onAppear { if index == 0 && focusedField == nil { focusedField = 0 }
+                        isLoading = true // start loading
+                        Task {
+                            await viewModel.sendVerificationToken()
+                            isLoading = false  // Stop loading
+                        }
+                    }
                     .allowsHitTesting(false) // Disable interaction with textfield
                     .accentColor(.clear) // make text cursor clear
                     .overlay( // change border color when not empty

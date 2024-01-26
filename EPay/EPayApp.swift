@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Homework1App: App {
+struct EPayApp: App {
     init() {
         Api.shared.appId = "QSQEo5xSmENL" // Set the appId for API
     }

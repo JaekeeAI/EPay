@@ -54,8 +54,7 @@ class LoginViewModel: ObservableObject {
     func verifyCode(phoneNumber: String, code: String, completion: @escaping (Bool, String?) -> Void) {
         Task {
             do {
-                let response = try await Api.shared.checkVerificationToken(e164PhoneNumber: phoneNumber, code: code)
-                print("Verification success, token: \(response.authToken)")
+                let _ = try await Api.shared.checkVerificationToken(e164PhoneNumber: phoneNumber, code: code)
                 completion(true, nil)
             } catch let error as ApiError {
                 let message = error.message.contains("Incorrect verification code") ? "Incorrect Code. Try Again" : error.message

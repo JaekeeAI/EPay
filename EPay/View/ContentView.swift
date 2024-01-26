@@ -37,7 +37,6 @@ struct LoginView: View {
                 action: {
                     isInputFocused = false
                     viewModel.GoToVerificationView = true
-                    Task { await viewModel.sendVerificationToken() }
                 },
                 isEnabled: viewModel.isPhoneNumberValid // if # valid enable button
             )

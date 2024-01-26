@@ -12,7 +12,7 @@
 		756FBD9E2B5B6EAA00C385AA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 756FBD9D2B5B6EAA00C385AA /* README.md */; };
 		756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */; };
 		756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */; };
-		757A3D8F2B565C4A00BF8D61 /* Homework1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */; };
+		757A3D8F2B565C4A00BF8D61 /* EPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D8E2B565C4A00BF8D61 /* EPayApp.swift */; };
 		757A3D912B565C4A00BF8D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D902B565C4A00BF8D61 /* ContentView.swift */; };
 		757A3D932B565C4B00BF8D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A3D922B565C4B00BF8D61 /* Assets.xcassets */; };
 		757A3D962B565C4B00BF8D61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A3D952B565C4B00BF8D61 /* Preview Assets.xcassets */; };
@@ -63,14 +63,14 @@
 		756FBD9D2B5B6EAA00C385AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldWrapper.swift; sourceTree = "<group>"; };
-		757A3D8B2B565C4A00BF8D61 /* Homework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1App.swift; sourceTree = "<group>"; };
+		757A3D8B2B565C4A00BF8D61 /* EPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		757A3D8E2B565C4A00BF8D61 /* EPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPayApp.swift; sourceTree = "<group>"; };
 		757A3D902B565C4A00BF8D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		757A3D922B565C4B00BF8D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		757A3D952B565C4B00BF8D61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		757A3D9B2B565C4B00BF8D61 /* Homework1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		757A3D9B2B565C4B00BF8D61 /* EPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757A3D9F2B565C4B00BF8D61 /* Homework1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1Tests.swift; sourceTree = "<group>"; };
-		757A3DA52B565C4B00BF8D61 /* Homework1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		757A3DA52B565C4B00BF8D61 /* EPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITests.swift; sourceTree = "<group>"; };
 		757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7586BD592B5F8C1E0041B9A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		757A3D822B565C4A00BF8D61 = {
 			isa = PBXGroup;
 			children = (
-				757A3D8D2B565C4A00BF8D61 /* Homework1 */,
+				757A3D8D2B565C4A00BF8D61 /* EPay */,
 				757A3D9E2B565C4B00BF8D61 /* Homework1Tests */,
 				757A3DA82B565C4B00BF8D61 /* Homework1UITests */,
 				757A3D8C2B565C4A00BF8D61 /* Products */,
@@ -119,18 +119,18 @@
 		757A3D8C2B565C4A00BF8D61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				757A3D8B2B565C4A00BF8D61 /* Homework1.app */,
-				757A3D9B2B565C4B00BF8D61 /* Homework1Tests.xctest */,
-				757A3DA52B565C4B00BF8D61 /* Homework1UITests.xctest */,
+				757A3D8B2B565C4A00BF8D61 /* EPay.app */,
+				757A3D9B2B565C4B00BF8D61 /* EPayTests.xctest */,
+				757A3DA52B565C4B00BF8D61 /* EPayUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		757A3D8D2B565C4A00BF8D61 /* Homework1 */ = {
+		757A3D8D2B565C4A00BF8D61 /* EPay */ = {
 			isa = PBXGroup;
 			children = (
 				756FBD9D2B5B6EAA00C385AA /* README.md */,
-				757A3D8E2B565C4A00BF8D61 /* Homework1App.swift */,
+				757A3D8E2B565C4A00BF8D61 /* EPayApp.swift */,
 				752004E92B5CDB6F00A68B9A /* Api.swift */,
 				758AB8252B588981000C968A /* Launch Screen.storyboard */,
 				757BD4D52B63134B00A0D46B /* Model */,
@@ -139,7 +139,7 @@
 				757A3D922B565C4B00BF8D61 /* Assets.xcassets */,
 				757A3D942B565C4B00BF8D61 /* Preview Content */,
 			);
-			path = Homework1;
+			path = EPay;
 			sourceTree = "<group>";
 		};
 		757A3D942B565C4B00BF8D61 /* Preview Content */ = {
@@ -199,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		757A3D8A2B565C4A00BF8D61 /* Homework1 */ = {
+		757A3D8A2B565C4A00BF8D61 /* EPay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 757A3DAF2B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "Homework1" */;
+			buildConfigurationList = 757A3DAF2B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "EPay" */;
 			buildPhases = (
 				757A3D872B565C4A00BF8D61 /* Sources */,
 				757A3D882B565C4A00BF8D61 /* Frameworks */,
@@ -212,17 +212,17 @@
 			);
 			dependencies = (
 			);
-			name = Homework1;
+			name = EPay;
 			packageProductDependencies = (
 				758C1DED2B62504C004CE379 /* PhoneNumberKit */,
 			);
 			productName = Homework1;
-			productReference = 757A3D8B2B565C4A00BF8D61 /* Homework1.app */;
+			productReference = 757A3D8B2B565C4A00BF8D61 /* EPay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		757A3D9A2B565C4B00BF8D61 /* Homework1Tests */ = {
+		757A3D9A2B565C4B00BF8D61 /* EPayTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 757A3DB22B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "Homework1Tests" */;
+			buildConfigurationList = 757A3DB22B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "EPayTests" */;
 			buildPhases = (
 				757A3D972B565C4B00BF8D61 /* Sources */,
 				757A3D982B565C4B00BF8D61 /* Frameworks */,
@@ -233,14 +233,14 @@
 			dependencies = (
 				757A3D9D2B565C4B00BF8D61 /* PBXTargetDependency */,
 			);
-			name = Homework1Tests;
+			name = EPayTests;
 			productName = Homework1Tests;
-			productReference = 757A3D9B2B565C4B00BF8D61 /* Homework1Tests.xctest */;
+			productReference = 757A3D9B2B565C4B00BF8D61 /* EPayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		757A3DA42B565C4B00BF8D61 /* Homework1UITests */ = {
+		757A3DA42B565C4B00BF8D61 /* EPayUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 757A3DB52B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "Homework1UITests" */;
+			buildConfigurationList = 757A3DB52B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "EPayUITests" */;
 			buildPhases = (
 				757A3DA12B565C4B00BF8D61 /* Sources */,
 				757A3DA22B565C4B00BF8D61 /* Frameworks */,
@@ -251,9 +251,9 @@
 			dependencies = (
 				757A3DA72B565C4B00BF8D61 /* PBXTargetDependency */,
 			);
-			name = Homework1UITests;
+			name = EPayUITests;
 			productName = Homework1UITests;
-			productReference = 757A3DA52B565C4B00BF8D61 /* Homework1UITests.xctest */;
+			productReference = 757A3DA52B565C4B00BF8D61 /* EPayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 757A3D862B565C4A00BF8D61 /* Build configuration list for PBXProject "Homework1" */;
+			buildConfigurationList = 757A3D862B565C4A00BF8D61 /* Build configuration list for PBXProject "EPay" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -295,9 +295,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				757A3D8A2B565C4A00BF8D61 /* Homework1 */,
-				757A3D9A2B565C4B00BF8D61 /* Homework1Tests */,
-				757A3DA42B565C4B00BF8D61 /* Homework1UITests */,
+				757A3D8A2B565C4A00BF8D61 /* EPay */,
+				757A3D9A2B565C4B00BF8D61 /* EPayTests */,
+				757A3DA42B565C4B00BF8D61 /* EPayUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,7 @@
 				7586BD642B607CB10041B9A5 /* CircularLoading.swift in Sources */,
 				7586BD5A2B5F8C1E0041B9A5 /* HomeView.swift in Sources */,
 				7586BD602B5FB2A00041B9A5 /* BarTitle.swift in Sources */,
-				757A3D8F2B565C4A00BF8D61 /* Homework1App.swift in Sources */,
+				757A3D8F2B565C4A00BF8D61 /* EPayApp.swift in Sources */,
 				756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */,
 				752004EC2B5CF5DB00A68B9A /* VerificationView.swift in Sources */,
 				752004EA2B5CDB7000A68B9A /* Api.swift in Sources */,
@@ -370,12 +370,12 @@
 /* Begin PBXTargetDependency section */
 		757A3D9D2B565C4B00BF8D61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 757A3D8A2B565C4A00BF8D61 /* Homework1 */;
+			target = 757A3D8A2B565C4A00BF8D61 /* EPay */;
 			targetProxy = 757A3D9C2B565C4B00BF8D61 /* PBXContainerItemProxy */;
 		};
 		757A3DA72B565C4B00BF8D61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 757A3D8A2B565C4A00BF8D61 /* Homework1 */;
+			target = 757A3D8A2B565C4A00BF8D61 /* EPay */;
 			targetProxy = 757A3DA62B565C4B00BF8D61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -507,7 +507,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Homework1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EPay/Preview Content\"";
 				DEVELOPMENT_TEAM = BU4NVKNK4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -537,7 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Homework1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EPay/Preview Content\"";
 				DEVELOPMENT_TEAM = BU4NVKNK4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -575,7 +575,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homework1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homework1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EPay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EPay";
 			};
 			name = Debug;
 		};
@@ -594,7 +594,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homework1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homework1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EPay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EPay";
 			};
 			name = Release;
 		};
@@ -635,7 +635,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		757A3D862B565C4A00BF8D61 /* Build configuration list for PBXProject "Homework1" */ = {
+		757A3D862B565C4A00BF8D61 /* Build configuration list for PBXProject "EPay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757A3DAD2B565C4B00BF8D61 /* Debug */,
@@ -644,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757A3DAF2B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "Homework1" */ = {
+		757A3DAF2B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "EPay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757A3DB02B565C4B00BF8D61 /* Debug */,
@@ -653,7 +653,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757A3DB22B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "Homework1Tests" */ = {
+		757A3DB22B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "EPayTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757A3DB32B565C4B00BF8D61 /* Debug */,
@@ -662,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757A3DB52B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "Homework1UITests" */ = {
+		757A3DB52B565C4B00BF8D61 /* Build configuration list for PBXNativeTarget "EPayUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757A3DB62B565C4B00BF8D61 /* Debug */,
