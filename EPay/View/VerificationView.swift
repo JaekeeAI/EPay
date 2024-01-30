@@ -11,6 +11,7 @@ struct VerificationView: View {
     @State private var otpFields: [String] = Array(repeating: "", count: 6)
     @State private var showHomeView = false
     @FocusState private var focusedField: Int?
+    @State private var isVerifying = false // use to check if it currently verifying OTP Code
     var phoneNumber: String
     @ObservedObject var viewModel: LoginViewModel
     @State private var errorMessage: String? = nil
@@ -186,14 +187,16 @@ struct VerificationView: View {
     private func verifyCodeIfComplete() {
         // check if all textfield is filled
         let isOTPComplete = otpFields.allSatisfy { $0.count == 1 }
-        // if all textfield is not filled then exit this function
-        guard isOTPComplete else { return }
+        // if all textfield is not filled or it currently verifying code then exit this function
+        guard isOTPComplete && !isVerifying else { return }
 
         let code = otpFields.joined()
+        isVerifying = true
         isLoading = true
         viewModel.verifyCode(phoneNumber: phoneNumber, code: code) { success, errorString in
             DispatchQueue.main.async {
                 isLoading = false
+                isVerifying = false
                 handleVerificationResult(success: success, errorString: errorString)
             }
         }

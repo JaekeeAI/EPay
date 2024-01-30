@@ -16,9 +16,9 @@
 		757A3D912B565C4A00BF8D61 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D902B565C4A00BF8D61 /* LoginView.swift */; };
 		757A3D932B565C4B00BF8D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A3D922B565C4B00BF8D61 /* Assets.xcassets */; };
 		757A3D962B565C4B00BF8D61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A3D952B565C4B00BF8D61 /* Preview Assets.xcassets */; };
-		757A3DA02B565C4B00BF8D61 /* Homework1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D9F2B565C4B00BF8D61 /* Homework1Tests.swift */; };
-		757A3DAA2B565C4B00BF8D61 /* Homework1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */; };
-		757A3DAC2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */; };
+		757A3DA02B565C4B00BF8D61 /* EPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D9F2B565C4B00BF8D61 /* EPayTests.swift */; };
+		757A3DAA2B565C4B00BF8D61 /* EPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DA92B565C4B00BF8D61 /* EPayUITests.swift */; };
+		757A3DAC2B565C4B00BF8D61 /* EPayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3DAB2B565C4B00BF8D61 /* EPayUITestsLaunchTests.swift */; };
 		7586BD5A2B5F8C1E0041B9A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD592B5F8C1E0041B9A5 /* HomeView.swift */; };
 		7586BD5C2B5FABA40041B9A5 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */; };
 		7586BD602B5FB2A00041B9A5 /* BarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */; };
@@ -69,10 +69,10 @@
 		757A3D922B565C4B00BF8D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		757A3D952B565C4B00BF8D61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		757A3D9B2B565C4B00BF8D61 /* EPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		757A3D9F2B565C4B00BF8D61 /* Homework1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1Tests.swift; sourceTree = "<group>"; };
+		757A3D9F2B565C4B00BF8D61 /* EPayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPayTests.swift; sourceTree = "<group>"; };
 		757A3DA52B565C4B00BF8D61 /* EPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITests.swift; sourceTree = "<group>"; };
-		757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		757A3DA92B565C4B00BF8D61 /* EPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPayUITests.swift; sourceTree = "<group>"; };
+		757A3DAB2B565C4B00BF8D61 /* EPayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7586BD592B5F8C1E0041B9A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTitle.swift; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				757A3D8D2B565C4A00BF8D61 /* EPay */,
-				757A3D9E2B565C4B00BF8D61 /* Homework1Tests */,
-				757A3DA82B565C4B00BF8D61 /* Homework1UITests */,
+				757A3D9E2B565C4B00BF8D61 /* EPayTests */,
+				757A3DA82B565C4B00BF8D61 /* EPayUITests */,
 				757A3D8C2B565C4A00BF8D61 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,21 +150,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		757A3D9E2B565C4B00BF8D61 /* Homework1Tests */ = {
+		757A3D9E2B565C4B00BF8D61 /* EPayTests */ = {
 			isa = PBXGroup;
 			children = (
-				757A3D9F2B565C4B00BF8D61 /* Homework1Tests.swift */,
+				757A3D9F2B565C4B00BF8D61 /* EPayTests.swift */,
 			);
-			path = Homework1Tests;
+			path = EPayTests;
 			sourceTree = "<group>";
 		};
-		757A3DA82B565C4B00BF8D61 /* Homework1UITests */ = {
+		757A3DA82B565C4B00BF8D61 /* EPayUITests */ = {
 			isa = PBXGroup;
 			children = (
-				757A3DA92B565C4B00BF8D61 /* Homework1UITests.swift */,
-				757A3DAB2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift */,
+				757A3DA92B565C4B00BF8D61 /* EPayUITests.swift */,
+				757A3DAB2B565C4B00BF8D61 /* EPayUITestsLaunchTests.swift */,
 			);
-			path = Homework1UITests;
+			path = EPayUITests;
 			sourceTree = "<group>";
 		};
 		757BD4D42B63134100A0D46B /* View */ = {
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757A3DA02B565C4B00BF8D61 /* Homework1Tests.swift in Sources */,
+				757A3DA02B565C4B00BF8D61 /* EPayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757A3DAC2B565C4B00BF8D61 /* Homework1UITestsLaunchTests.swift in Sources */,
-				757A3DAA2B565C4B00BF8D61 /* Homework1UITests.swift in Sources */,
+				757A3DAC2B565C4B00BF8D61 /* EPayUITestsLaunchTests.swift in Sources */,
+				757A3DAA2B565C4B00BF8D61 /* EPayUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

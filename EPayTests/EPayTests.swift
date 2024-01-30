@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Homework1
+@testable import EPay
 
 final class Homework1Tests: XCTestCase {
 
