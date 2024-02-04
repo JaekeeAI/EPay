@@ -11,25 +11,27 @@ import PhoneNumberKit
 struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
     @FocusState private var isInputFocused: Bool
+    @EnvironmentObject var userModel: UserModel
 
     var body: some View {
-        
         NavigationStack {
             VStack {
                 titleText        // What's your phone number?
                 phoneNumberInput // Phone number textfield and flag
-                Spacer()
                 sendCodeButton
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black)
             .contentShape(Rectangle())
             .onTapGesture { isInputFocused = false }
-            .onAppear { isInputFocused = true }
+            .onAppear {
+                isInputFocused = true
+                print("this is login view")
+            }
             .barTitle(title: "EPay", logoImage: "epaylogo")
         }
     }
-    
+
     private var sendCodeButton: some View {
         ZStack { // Send Verification Button
             BottomButton(

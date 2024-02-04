@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import PhoneNumberKit
 
-// ViewModel class for handling login logic and state management
+// ViewModel class for handling login logic 
 class LoginViewModel: ObservableObject {
     @Published var phoneNumber = ""
     @Published var errorMessage = ""
@@ -31,37 +31,31 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    // Method to send verification token
+    // Method to send verification code
     func sendVerificationToken() async {
         do {
             let _ = try await Api.shared.sendVerificationToken(e164PhoneNumber: phoneNumber)
 
-            DispatchQueue.main.async {
-                self.GoToVerificationView = true
-            }
+            DispatchQueue.main.async { self.GoToVerificationView = true }
         } catch let apiError as ApiError {
-            DispatchQueue.main.async {
-                self.errorMessage = apiError.message
-            }
+            DispatchQueue.main.async { self.errorMessage = apiError.message }
         } catch {
-            DispatchQueue.main.async {
-                self.errorMessage = "Failed to send verification token"
-            }
+            DispatchQueue.main.async { self.errorMessage = "Failed to send verification token" }
         }
     }
     
-    // Add in LoginViewModel
-    func verifyCode(phoneNumber: String, code: String, completion: @escaping (Bool, String?) -> Void) {
+    func verifyCode(phoneNumber: String, code: String, completion: @escaping (Bool, String?, String?) -> Void) {
         Task {
             do {
-                let _ = try await Api.shared.checkVerificationToken(e164PhoneNumber: phoneNumber, code: code)
-                completion(true, nil)
+                let response = try await Api.shared.checkVerificationToken(e164PhoneNumber: phoneNumber, code: code)
+                completion(true, nil, response.authToken)
             } catch let error as ApiError {
                 let message = error.message.contains("Incorrect verification code") ? "Incorrect Code. Try Again" : error.message
-                completion(false, message)
+                completion(false, message, nil)
             } catch {
-                completion(false, "An error occurred.")
+                completion(false, "An error occurred.", nil)
             }
         }
     }
+
 }

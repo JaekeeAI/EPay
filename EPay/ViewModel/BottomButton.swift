@@ -17,7 +17,7 @@ struct BottomButton: View {
         GeometryReader { geometry in // grab the screen size
             Button(action: action) {
                 if isLoading {
-                    CircularLoading() // Use your loading view
+                    CircularLoading(color: .black) // Use your loading view
                 } else {
                     Text(label)
                         .fontWeight(.semibold)

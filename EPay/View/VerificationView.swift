@@ -17,6 +17,7 @@ struct VerificationView: View {
     @State private var errorMessage: String? = nil
     @State private var isVerificationSuccessful: Bool = false // Use for border
     @State private var isLoading = false  // Use for CircularLoading animation
+    @EnvironmentObject var userModel: UserModel
     
     @State private var cooldownTime: Int = 0
 
@@ -26,13 +27,15 @@ struct VerificationView: View {
                 titleText
                 otpTextFields
                 verificationStatusText
-                Spacer()
                 resendButton
             }
             .background(Color.black)
-            .navigationDestination(isPresented: $showHomeView) { HomeView() }
+            .navigationDestination(isPresented: $showHomeView) {
+                HomeView()
+            }
             .barTitle(title: "EPay", logoImage: "epaylogo")
             .onAppear{
+                print("this is verification view")
                 isLoading = true // start loading
                 Task {
                     await viewModel.sendVerificationToken()
@@ -193,27 +196,35 @@ struct VerificationView: View {
         let code = otpFields.joined()
         isVerifying = true
         isLoading = true
-        viewModel.verifyCode(phoneNumber: phoneNumber, code: code) { success, errorString in
+        viewModel.verifyCode(phoneNumber: phoneNumber, code: code) { success, errorString, authToken in
             DispatchQueue.main.async {
                 isLoading = false
                 isVerifying = false
-                handleVerificationResult(success: success, errorString: errorString)
+                handleVerificationResult(success: success, errorString: errorString, authToken: authToken)
             }
         }
+
     }
 
-    private func handleVerificationResult(success: Bool, errorString: String?) {
+    private func handleVerificationResult(success: Bool, errorString: String?, authToken: String?) {
         if success {
-            isVerificationSuccessful = true
-            errorMessage = nil
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // delays 1 second
-                showHomeView = true
+            if let authToken = authToken {
+                isVerificationSuccessful = true
+                errorMessage = nil
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    showHomeView = true
+                    self.userModel.setAuthToken(authToken: authToken)
+                }
+            } else {
+                errorMessage = "Failed to retrieve authentication token."
+                isVerificationSuccessful = false
             }
         } else {
             errorMessage = errorString
             isVerificationSuccessful = false
         }
     }
+
     
     // This function determines the color of the border based on various conditions
     private func getBorderColor(for index: Int) -> Color {

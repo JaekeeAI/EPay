@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CircularLoading: View {
     @State private var isSpinning = false
+    let color: Color
 
     var body: some View {
         Circle()
             .trim(from: 0, to: 0.5) // Trim the circle to create a 'C' shape
-            .stroke(LinearGradient(colors: [.black], startPoint: .topLeading, endPoint: .bottomTrailing), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+            .stroke(LinearGradient(colors: [color], startPoint: .topLeading, endPoint: .bottomTrailing), style: StrokeStyle(lineWidth: 5, lineCap: .round))
             .frame(width: 21, height: 21)
             .rotationEffect(Angle(degrees: isSpinning ? 360 : 0))
             .onAppear {
@@ -25,5 +26,5 @@ struct CircularLoading: View {
 }
 
 #Preview {
-    CircularLoading()
+    CircularLoading(color: .black)
 }

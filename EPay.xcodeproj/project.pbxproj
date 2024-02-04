@@ -12,6 +12,13 @@
 		756FBD9E2B5B6EAA00C385AA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 756FBD9D2B5B6EAA00C385AA /* README.md */; };
 		756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */; };
 		756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */; };
+		757A2A922B68D9AB0059076A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2A912B68D9AB0059076A /* SettingView.swift */; };
+		757A2A942B68DA0B0059076A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2A932B68DA0B0059076A /* UserModel.swift */; };
+		757A2A962B68DA820059076A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2A952B68DA820059076A /* LoadingView.swift */; };
+		757A2A9C2B69633C0059076A /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2A9B2B69633C0059076A /* CustomDivider.swift */; };
+		757A2A9E2B6963AE0059076A /* SettingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2A9D2B6963AE0059076A /* SettingTextField.swift */; };
+		757A2AA02B697ECE0059076A /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2A9F2B697ECE0059076A /* CustomHeader.swift */; };
+		757A2AA22B69A9E80059076A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A2AA12B69A9E80059076A /* RootView.swift */; };
 		757A3D8F2B565C4A00BF8D61 /* EPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D8E2B565C4A00BF8D61 /* EPayApp.swift */; };
 		757A3D912B565C4A00BF8D61 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A3D902B565C4A00BF8D61 /* LoginView.swift */; };
 		757A3D932B565C4B00BF8D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A3D922B565C4B00BF8D61 /* Assets.xcassets */; };
@@ -63,6 +70,13 @@
 		756FBD9D2B5B6EAA00C385AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldWrapper.swift; sourceTree = "<group>"; };
+		757A2A912B68D9AB0059076A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		757A2A932B68DA0B0059076A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		757A2A952B68DA820059076A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		757A2A9B2B69633C0059076A /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
+		757A2A9D2B6963AE0059076A /* SettingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextField.swift; sourceTree = "<group>"; };
+		757A2A9F2B697ECE0059076A /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
+		757A2AA12B69A9E80059076A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		757A3D8B2B565C4A00BF8D61 /* EPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757A3D8E2B565C4A00BF8D61 /* EPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPayApp.swift; sourceTree = "<group>"; };
 		757A3D902B565C4A00BF8D61 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -106,6 +120,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7569DA162B6CBD25007DE787 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				757A2A9F2B697ECE0059076A /* CustomHeader.swift */,
+				757A2AA12B69A9E80059076A /* RootView.swift */,
+				757A2A9D2B6963AE0059076A /* SettingTextField.swift */,
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
 		757A3D822B565C4A00BF8D61 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +160,7 @@
 				757BD4D52B63134B00A0D46B /* Model */,
 				757BD4D42B63134100A0D46B /* View */,
 				757BD4D62B63137100A0D46B /* ViewModel */,
+				7569DA162B6CBD25007DE787 /* Random */,
 				757A3D922B565C4B00BF8D61 /* Assets.xcassets */,
 				757A3D942B565C4B00BF8D61 /* Preview Content */,
 			);
@@ -170,9 +195,11 @@
 		757BD4D42B63134100A0D46B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				757A2A952B68DA820059076A /* LoadingView.swift */,
 				757A3D902B565C4A00BF8D61 /* LoginView.swift */,
 				752004EB2B5CF5DB00A68B9A /* VerificationView.swift */,
 				7586BD592B5F8C1E0041B9A5 /* HomeView.swift */,
+				757A2A912B68D9AB0059076A /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +209,7 @@
 			children = (
 				756FBD9F2B5C21B000C385AA /* LoginViewModel.swift */,
 				756FBDA12B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift */,
+				757A2A932B68DA0B0059076A /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +220,7 @@
 				7586BD5F2B5FB2A00041B9A5 /* BarTitle.swift */,
 				7586BD5B2B5FABA40041B9A5 /* BottomButton.swift */,
 				7586BD632B607CB10041B9A5 /* CircularLoading.swift */,
+				757A2A9B2B69633C0059076A /* CustomDivider.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -335,16 +364,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757A2A9E2B6963AE0059076A /* SettingTextField.swift in Sources */,
+				757A2AA02B697ECE0059076A /* CustomHeader.swift in Sources */,
 				757A3D912B565C4A00BF8D61 /* LoginView.swift in Sources */,
+				757A2AA22B69A9E80059076A /* RootView.swift in Sources */,
 				7586BD642B607CB10041B9A5 /* CircularLoading.swift in Sources */,
 				7586BD5A2B5F8C1E0041B9A5 /* HomeView.swift in Sources */,
 				7586BD602B5FB2A00041B9A5 /* BarTitle.swift in Sources */,
 				757A3D8F2B565C4A00BF8D61 /* EPayApp.swift in Sources */,
 				756FBDA02B5C21B000C385AA /* LoginViewModel.swift in Sources */,
+				757A2A9C2B69633C0059076A /* CustomDivider.swift in Sources */,
 				752004EC2B5CF5DB00A68B9A /* VerificationView.swift in Sources */,
 				752004EA2B5CDB7000A68B9A /* Api.swift in Sources */,
 				7586BD5C2B5FABA40041B9A5 /* BottomButton.swift in Sources */,
 				756FBDA22B5C223200C385AA /* PhoneNumberTextFieldWrapper.swift in Sources */,
+				757A2A942B68DA0B0059076A /* UserModel.swift in Sources */,
+				757A2A962B68DA820059076A /* LoadingView.swift in Sources */,
+				757A2A922B68D9AB0059076A /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
