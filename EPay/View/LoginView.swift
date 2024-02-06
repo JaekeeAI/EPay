@@ -24,9 +24,7 @@ struct LoginView: View {
             .background(Color.black)
             .contentShape(Rectangle())
             .onTapGesture { isInputFocused = false }
-            .onAppear {
-                isInputFocused = true
-            }
+            .onAppear { isInputFocused = true }
             .barTitle(title: "EPay", logoImage: "epaylogo")
         }
     }

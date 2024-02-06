@@ -18,8 +18,6 @@ struct VerificationView: View {
     @State private var isVerificationSuccessful: Bool = false // Use for border
     @State private var isLoading = false  // Use for CircularLoading animation
     @EnvironmentObject var userModel: UserModel
-    @Namespace var namespace
-    
     @State private var cooldownTime: Int = 0
 
     var body: some View {
@@ -34,7 +32,6 @@ struct VerificationView: View {
             .navigationDestination(isPresented: $showHomeView) { HomeView() }
             .barTitle(title: "EPay", logoImage: "epaylogo")
             .onAppear{
-                print("this is verification view")
                 isLoading = true // start loading
                 Task {
                     await viewModel.sendVerificationToken()

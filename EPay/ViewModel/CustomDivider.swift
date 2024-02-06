@@ -16,7 +16,6 @@ struct CustomDivider: View {
     }
 }
 
-
 #Preview {
     CustomDivider()
         .frame(maxWidth: .infinity, maxHeight: .infinity)

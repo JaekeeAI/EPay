@@ -46,3 +46,13 @@ https://www.hackingwithswift.com/example-code/system/how-to-run-code-after-a-del
 
 Timer.scheduledTimer
 I got rate limited for sending too many multiple OTP request so I set up a cooldown using a Timer 
+
+- HW 3 -
+
+I use this video to make HomeView specifically the expand and collapses feature in HomeView
+https://www.youtube.com/watch?app=desktop&v=JrLhtCSs6z0
+
+The Gradient Color schema I use this as references in HomeView
+https://stackoverflow.com/questions/74900252/how-to-make-a-apple-wallet-card-background-color-in-swiftui
+
+

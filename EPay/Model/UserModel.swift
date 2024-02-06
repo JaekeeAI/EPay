@@ -12,7 +12,6 @@ class UserModel: ObservableObject {
     @Published var apiError: ApiError?
     @Published var authToken: String?
     
-
     init() {
         self.authToken = UserDefaults.standard.string(forKey: "authToken")
         if let authToken = self.authToken {
