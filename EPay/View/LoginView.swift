@@ -26,7 +26,6 @@ struct LoginView: View {
             .onTapGesture { isInputFocused = false }
             .onAppear {
                 isInputFocused = true
-                print("this is login view")
             }
             .barTitle(title: "EPay", logoImage: "epaylogo")
         }

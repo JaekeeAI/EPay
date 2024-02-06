@@ -24,7 +24,11 @@ struct SettingView: View {
                     bottomButton
                 }
                 .foregroundColor(.white)
-                .onAppear{print("this is setting view")}
+                .onAppear{
+                    if let currentUser = userModel.currentUser {
+                        self.username = currentUser.name ?? ""
+                    }
+                }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
@@ -32,7 +36,14 @@ struct SettingView: View {
                             .font(.headline)
                             .foregroundColor(Color.white)
                     }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            Task { await userModel.updateUsername(username) }
+                        }) { Text("Save") }
+                    }
                 }
+                
             }
         }
     }
@@ -45,8 +56,8 @@ struct SettingView: View {
                 .frame(width: 120, height: 30, alignment: .leading)
             
             ZStack(alignment: .leading) {
-                if username.isEmpty {
-                    Text("Shrey")
+                if username.isEmpty { // if empty then show placeholder text
+                    Text("Shreyas")
                         .foregroundColor(Color(.darkGray)) // Placeholder color
                 }
                 TextField("", text: $username)
@@ -61,6 +72,7 @@ struct SettingView: View {
             Text("Phone #")
                 .padding(.leading, 20)
                 .frame(width: 120, height: 30, alignment: .leading)
+            
             
             ZStack(alignment: .leading) {
                 Text(userModel.currentUser?.e164PhoneNumber ?? "N/A")

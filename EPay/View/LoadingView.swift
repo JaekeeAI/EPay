@@ -19,6 +19,13 @@ struct LoadingView: View {
         .onAppear() {
             print("this is loading view")
         }
+        .onAppear {
+            if let authToken = userModel.authToken {
+                Task {
+                    await userModel.loadUserData(authToken: authToken)
+                }
+            }
+        }
     }
 }
 

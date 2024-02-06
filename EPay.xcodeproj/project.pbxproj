@@ -120,14 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7569DA162B6CBD25007DE787 /* Random */ = {
+		7569DA162B6CBD25007DE787 /* IgnoreTheseFiles */ = {
 			isa = PBXGroup;
 			children = (
 				757A2A9F2B697ECE0059076A /* CustomHeader.swift */,
 				757A2AA12B69A9E80059076A /* RootView.swift */,
 				757A2A9D2B6963AE0059076A /* SettingTextField.swift */,
 			);
-			path = Random;
+			path = IgnoreTheseFiles;
 			sourceTree = "<group>";
 		};
 		757A3D822B565C4A00BF8D61 = {
@@ -160,7 +160,7 @@
 				757BD4D52B63134B00A0D46B /* Model */,
 				757BD4D42B63134100A0D46B /* View */,
 				757BD4D62B63137100A0D46B /* ViewModel */,
-				7569DA162B6CBD25007DE787 /* Random */,
+				7569DA162B6CBD25007DE787 /* IgnoreTheseFiles */,
 				757A3D922B565C4B00BF8D61 /* Assets.xcassets */,
 				757A3D942B565C4B00BF8D61 /* Preview Content */,
 			);

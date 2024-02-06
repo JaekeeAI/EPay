@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct EPayApp: App {
+    
+    // 
     @StateObject private var userModel = UserModel()
     
     init() {
@@ -17,13 +19,13 @@ struct EPayApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if userModel.authToken == nil {
-                LoginView().environmentObject(userModel)
-            } else {
-                // LoadingView is not necessary here unless you need to load data every time authToken is set
+            if userModel.authToken != nil && userModel.currentUser == nil {
+                LoadingView().environmentObject(userModel)
+            } else if userModel.currentUser != nil {
                 HomeView().environmentObject(userModel)
+            } else {
+                LoginView().environmentObject(userModel)
             }
         }
-    }
-}
+    }}
 

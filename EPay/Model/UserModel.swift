@@ -32,39 +32,45 @@ class UserModel: ObservableObject {
 
     func logout() {
         UserDefaults.standard.removeObject(forKey: "authToken")
+        UserDefaults.standard.removeObject(forKey: "username")
         authToken = nil
         currentUser = nil
     }
-
 
     // Function to load user data using the stored authentication token
     func loadUserData(authToken: String) async {
         do { // Use the authToken to fetch Users
             let userResponse = try await Api.shared.user(authToken: authToken)
+            DispatchQueue.main.async { self.currentUser = userResponse.user }
+        } catch let error as ApiError {
+            DispatchQueue.main.async { self.apiError = error }
+        } catch {
+            DispatchQueue.main.async { self.apiError = ApiError.unknownError }
+        }
+    }
+
+    // Function to update the username both locally and on the server
+    func updateUsername(_ newName: String) async {
+        guard let authToken = self.authToken else { return }
+        do {
+            // Update username on the server
+            let userResponse = try await Api.shared.setUserName(authToken: authToken, name: newName)
             DispatchQueue.main.async {
+                // Update the currentUser with the new data from the server
                 self.currentUser = userResponse.user
+                // Save the updated username to UserDefaults
+                if let updatedName = self.currentUser?.name {
+                    UserDefaults.standard.set(updatedName, forKey: "username")
+                }
             }
         } catch let error as ApiError {
             DispatchQueue.main.async {
                 self.apiError = error
-                print("API Error: \(error)")
             }
         } catch {
             DispatchQueue.main.async {
                 self.apiError = ApiError.unknownError
-                print("Unknown error occurred")
             }
-        }
-    }
-
-    // Function to update the username
-    func updateUsername(_ newName: String) async {
-        guard let authToken = self.authToken else { return }
-        do {
-            _ = try await Api.shared.setUserName(authToken: authToken, name: newName)
-            await loadUserData(authToken: authToken)
-        } catch {
-            // Handle error
         }
     }
 }
